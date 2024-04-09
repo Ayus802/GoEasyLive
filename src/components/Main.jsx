@@ -14,13 +14,16 @@ function Card({id,heading, place,rent,deposit,builtup,propertyType,parking,furni
             setIds(id)
             navigate('/Main/flat')
         }} >
-            <div className='text-left border-b p-1 border-gray-500'>
+            <div className='text-left border-b p-1 border-gray-500 flex justify-between'>
+                <div>
                 <div className='text-xl font-bold'>
                     {heading}
                 </div>
                 <div className='text-gray-400 text-sm'>
                     {place}
                 </div>
+                </div>
+                <button onClick={()=>alert("you are adding")}>Add to WatchList</button>
             </div>
             <div className='grid grid-cols-3 border-b p-2 border-gray-500'>
                 <div className='border-r border-gray-500 p-1'>
