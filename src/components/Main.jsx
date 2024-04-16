@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import data from './data'
 
 
-function Main({ids,setIds}) {
+function Main({ids,setIds,setWatchLists, watchLists }) {
     const navigate = useNavigate()
 
 function Card({id,heading, place,rent,deposit,builtup,propertyType,parking,furnishing,available,image}){
@@ -23,7 +23,10 @@ function Card({id,heading, place,rent,deposit,builtup,propertyType,parking,furni
                     {place}
                 </div>
                 </div>
-                <button onClick={()=>alert("you are adding")}>Add to WatchList</button>
+                <button onClick={()=>{alert("you are adding");
+                                    setWatchLists([...watchLists,id]) ;
+                                    console.log(watchLists);
+            }}>Add to WatchList</button>
             </div>
             <div className='grid grid-cols-3 border-b p-2 border-gray-500'>
                 <div className='border-r border-gray-500 p-1'>
