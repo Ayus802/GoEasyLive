@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 function Login({verified ,setVerified}) {
@@ -7,29 +7,31 @@ function Login({verified ,setVerified}) {
     const [password, setPassword] = useState('');
     const [invaliddetail, setInvaliddetail] = useState()
     const navigate = useNavigate()
-    const handleLogin = async (e) => {
-        e.preventDefault();
 
-        try {
-            // Replace the URL with your authentication API endpoint
-            const response = await axios.post('/login', { email:email, password:password });
-            console.log(response.data);
-             if (response.data.success){
-              setInvaliddetail(false)
-              navigate('/Main')
-              setVerified(true)
-             }
-             else{
-              setInvaliddetail(true)
-              setVerified(false)
-             }
+
+    // const handleLogin = async (e) => {
+    //     e.preventDefault();
+
+    //     try {
+    //         // Replace the URL with your authentication API endpoint
+    //         const response = await axios.post('/login', { email:email, password:password });
+    //         console.log(response.data);
+    //          if (response.data.success){
+    //           setInvaliddetail(false)
+    //           navigate('/Main')
+    //           setVerified(true)
+    //          }
+    //          else{
+    //           setInvaliddetail(true)
+    //           setVerified(false)
+    //          }
             
-        } catch (error) {
-          setInvaliddetail(true)
-            console.error('Login Nhi hua',error);
-        }
+    //     } catch (error) {
+    //       setInvaliddetail(true)
+    //         console.error('Login Nhi hua',error);
+    //     }
       
-    };
+    // };
 
     return (
         <div className="bg-red-100 min-h-screen flex items-center justify-center">
